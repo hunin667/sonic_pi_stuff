@@ -1,0 +1,9 @@
+live_loop :synthshuffle do
+  syns =  synth_names.tick
+  use_synth syns
+  notes = (scale :e1, :minor_pentatonic).shuffle
+  4.times do
+    play notes.tick#,  cutoff: rrand(60, 110)
+    sleep 0.5
+  end
+end
