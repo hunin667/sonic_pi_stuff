@@ -1,0 +1,11 @@
+p =0
+live_loop :goingup do
+  use_synth :dtri
+  if  p > 72 then p=0 end
+  notes = (scale :c1, :minor_pentatonic).shuffle
+  4.times do
+    play notes.tick, pitch: p#,  cutoff: rrand(60, 110)
+    sleep 0.5
+  end
+  p= p + 12
+end
