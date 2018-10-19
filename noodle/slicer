@@ -1,0 +1,11 @@
+#a14
+
+x = 1
+4.times do
+  with_fx :slicer, phase: x do
+    synth :prophet, note: :e1, release: 8, cutoff: 70
+    synth :prophet, note: :e1 + 4, release: 8, cutoff: 80
+  end
+  sleep 8
+  x=x-0.125
+end
